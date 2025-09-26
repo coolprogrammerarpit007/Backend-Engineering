@@ -141,3 +141,26 @@ def find_factorial(number):
 # print(f"Value of a is: {a}")
 # change_value_of_a()
 # print(f"Value of a is: {a}")
+
+
+
+# Scope In Python :- Scope refers to  region of code where the python variable is accessible. It follows LEGB RULE
+# l -> Local
+# E -> Enclosing
+# G -> Global
+# B -> BuiltIn Functions
+
+
+
+def outer_func():
+    modified_str = "I am String"
+
+    def inner_func():
+        nonlocal modified_str
+        print(modified_str)
+        modified_str = "I am Ultra Modified String"
+
+    inner_func()
+    print(modified_str)
+
+outer_func()
