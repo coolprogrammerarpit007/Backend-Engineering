@@ -125,5 +125,19 @@ def find_factorial(number):
 # result = is_pallindrome(input_string)
 # print(f"String {input_string} is {'Is A Palindrome String' if result else 'Not A Palindrome String '}")
 
+# scope
+
+# a = 5
+
+# def change_value_of_a():
+#     global a
+#     b = a + 2
+#     a = b
+
+#     print(f"Value of a is: {a}")
+#     print(f"Value of b is: {b}")
 
 
+# print(f"Value of a is: {a}")
+# change_value_of_a()
+# print(f"Value of a is: {a}")
