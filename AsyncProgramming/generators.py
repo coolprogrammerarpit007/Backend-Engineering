@@ -72,3 +72,23 @@ print(f"Generator Memory Size: {sys.getsizeof(numbers2)}")
 
 doubled = list(map(lambda x:x*x,numbers2))
 print(doubled)
+
+
+
+# decorator
+
+def greeting(fn):
+    def mx():
+        print("Good Morning! Nice to Meet You")
+        fn()
+        print("It was nice meeting you, see you soon")
+
+    return mx
+
+
+@greeting
+def hello():
+    print("Hello World!")
+
+
+hello()
