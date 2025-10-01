@@ -75,7 +75,16 @@ async def makerandom(delay, threshold=6):
     return number
 
 if __name__ == "__main__":
-    random.seed(444)
-    r1, r2, r3 = asyncio.run(main())
-    print()
-    print(f"r1: {r1}, r2: {r2}, r3: {r3}")
+    pass
+    # random.seed(444)
+    # r1, r2, r3 = asyncio.run(main())
+    # print()
+    # print(f"r1: {r1}, r2: {r2}, r3: {r3}")
+
+
+
+# Common Async I/O Patterns
+
+random.seed(200)
+number = random.randint(1,50)
+print(f"Random Number: {number}")
