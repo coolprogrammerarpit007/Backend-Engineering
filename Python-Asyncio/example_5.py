@@ -4,7 +4,7 @@ import time
 
 async def fetch_data(param):
     print(f"Do something with {param}...")
-    await asyncio.sleep(param)
+    time.sleep(param)
     print(f"Done with {param}")
     return f"Result of {param}"
 
@@ -22,6 +22,7 @@ async def main():
 t1 = time.perf_counter()
 
 results = asyncio.run(main())
+print(results)
 
 t2 = time.perf_counter()
 print(f"Finished in {t2 - t1:.2f} seconds")

@@ -25,8 +25,6 @@ async def main():
 
 t1 = time.perf_counter()
 results = asyncio.run(main())
-print(results)
-
 t2 = time.perf_counter()
-results = asyncio.run(main())
-print(results)
+result = t2-t1
+print(f"Total Time to run the Program: {t2-t1:.1f} seconds")
