@@ -35,3 +35,8 @@ def count_alphabets(Request,str):
         
         
     return HttpResponse("Counting of Allphabest 🤣😂")
+
+
+def greeting(Request,str):
+    name = str[0].upper() + str[1:]
+    return HttpResponse(f"Nice to have you back: {name}")
