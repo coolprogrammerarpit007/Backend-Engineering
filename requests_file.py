@@ -96,3 +96,13 @@
 # Send Request Data
 
 # According to the HTTP specification, POST, PUT, and the less common PATCH requests pass their data through the message body rather than through parameters in the query string. With Requests, you pass this payload to the corresponding function’s data parameter.
+
+
+# The requests.Session object in Python is used to persist certain parameters across multiple HTTP requests, which brings both convenience and performance benefits when interacting with web APIs or servers repeatedly.
+
+# Why Use requests.Session?
+# Persistence: Cookies (like authentication tokens or tracking IDs) are preserved across all requests made using the session. This is especially useful for operations like logging in once and then making further authenticated requests.
+
+# Connection Pooling: The session object reuses underlying TCP connections for requests to the same host, which can significantly improve speed by avoiding the overhead of repeatedly establishing new connections.
+
+# Shared State: You can easily set headers, authentication, and other configuration defaults once at the session level. These will apply to all subsequent requests made through the session unless overridden at the request level.
