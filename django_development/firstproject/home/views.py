@@ -40,3 +40,21 @@ def count_alphabets(Request,str):
 def greeting(Request,str):
     name = str[0].upper() + str[1:]
     return HttpResponse(f"Nice to have you back: {name}")
+
+
+def client_html(request):
+    return render(request,'index.html')
+
+
+def friends(request):
+    names = ['Avinash','Priyanshu','Pranshu','Manthan','Rajesh']
+    student = {
+        'name':'Arpit',
+        'age':25,
+        'is_married':"Male"
+    }
+    context = {
+        'friends':names,
+        'student':student
+    }
+    return render(request,'friends.html',context)
