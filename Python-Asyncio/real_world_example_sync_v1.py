@@ -1,7 +1,7 @@
 import time
 from pathlib import Path
 
-import requests
+import requests_file
 from PIL import Image
 
 IMAGE_URLS = [
@@ -24,7 +24,7 @@ ORIGINAL_DIR = Path("original_images")
 PROCESSED_DIR = Path("processed_images")
 
 
-def download_single_image(session: requests.Session, url: str, img_num: int) -> Path:
+def download_single_image(session: requests_file.Session, url: str, img_num: int) -> Path:
     print(f"Downloading {url}...")
     ts = int(time.time())
     url = f"{url}?ts={ts}"  # Add timestamp to avoid caching issues
@@ -43,7 +43,7 @@ def download_single_image(session: requests.Session, url: str, img_num: int) -> 
 
 
 def download_images(urls: list) -> list[Path]:
-    with requests.Session() as session:
+    with requests_file.Session() as session:
         img_paths = [
             download_single_image(session, url, img_num)
             for img_num, url in enumerate(urls, start=1)

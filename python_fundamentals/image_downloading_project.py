@@ -1,4 +1,4 @@
-import requests
+import requests_file
 import uuid
 import threading
 
@@ -11,7 +11,7 @@ class ImageDownloader(threading.Thread):
         
     def run(self):
         print(f"Image downloaded by the thread {threading.current_thread().name}")
-        image = requests.get(self.url).content
+        image = requests_file.get(self.url).content
         image_name = f"images/{str(uuid.uuid4())}.jpg"
         
         with open(image_name,"wb") as f_hand:

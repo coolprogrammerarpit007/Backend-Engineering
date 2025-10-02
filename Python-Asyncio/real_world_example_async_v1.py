@@ -2,7 +2,7 @@ import asyncio
 import time
 from pathlib import Path
 
-import requests
+import requests_file
 from PIL import Image
 
 IMAGE_URLS = [
@@ -29,7 +29,7 @@ def download_single_image(url: str, img_num: int) -> Path:
     print(f"Downloading {url}...")
     ts = int(time.time())
     url = f"{url}?ts={ts}"  # Add timestamp to avoid caching issues
-    response = requests.get(url, timeout=10, allow_redirects=True)
+    response = requests_file.get(url, timeout=10, allow_redirects=True)
     response.raise_for_status()
 
     filename = f"image_{img_num}.jpg"

@@ -15,11 +15,11 @@
 # python
 
 import time
-import requests
+import requests_file
 
 def fetch_sync(url):
     print(f"Fetching {url}...")
-    response = requests.get(url)
+    response = requests_file.get(url)
     print(f"Done fetching {url} with status code {response.status_code}.")
 
 def main_sync():
