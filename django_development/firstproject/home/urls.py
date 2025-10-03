@@ -1,6 +1,6 @@
 
 from django.urls import path
-from home.views import index,contact,dynamic_route,count_alphabets,greeting,client_html,friends
+from home.views import index,contact,dynamic_route,count_alphabets,greeting,client_html,friends,about
 
 urlpatterns = [
     path('home/',index),
@@ -9,5 +9,6 @@ urlpatterns = [
     path('count-alphabets/<str>',count_alphabets),
     path('greetings/<str>',greeting),
     path('client/',client_html),
-    path('friends/',friends)
+    path('friends/',friends),
+    path('about/',about)
 ]

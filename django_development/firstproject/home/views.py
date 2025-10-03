@@ -55,6 +55,12 @@ def friends(request):
     }
     context = {
         'friends':names,
-        'student':student
+        'student':student,
+        'fruits':None,
+        'value':134.79895555
     }
     return render(request,'friends.html',context)
+
+
+def about(request):
+    return render(request,'about.html')

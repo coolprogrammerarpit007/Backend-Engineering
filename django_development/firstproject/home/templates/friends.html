@@ -1,13 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Friends</title>
-</head>
-<body>
+
+{% extends "base.html" %}
+{% block start %}
     <h1>These are my friends</h1>
-    {{friends}}
-    {{student}}
-</body>
-</html>
+    <br><br>
+    {{friends|first}}
+    <br>
+    {{friends|last}}
+    <br>
+    {{value|floatformat:2}}
+    <br>
+    {% with a=500 %}
+    {{a}}
+    {% endwith %}
+    
+
+    <!-- Itterating over friends array -->
+     {% for friend in friends %}
+        <p>My friend: {{friend}} </p>
+     {% endfor %}
+
+     {{fruits|default:"No fruits are provided"}}
+     <!-- Showing over student details -->
+
+     {% for key,value in student.items %}
+        {% if not key == 'is_married' %}
+            <p>Student {{key}} is: {{value}}</p>
+        {% else %}
+            {% if value %}
+                <p>Student is Married</p>
+            {% else %}
+                <p>Student is Not Married</p>
+            {% endif %}
+        {% endif %}
+     {% endfor %}
+
+{% endblock %}
